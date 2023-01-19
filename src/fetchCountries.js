@@ -1,0 +1,11 @@
+import Notiflix from 'notiflix';
+export function fetchCountries(name) {
+  const URL_LINK = 'https://restcountries.com/v3.1/name/';
+  return fetch(`${URL_LINK}${name}`).then(response => {
+    if (!response.ok) {
+      Notiflix.Notify.info('Oops, there is no country with that name');
+      throw new Error(response.statusText);
+    }
+    return response.json();
+  });
+}
