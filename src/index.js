@@ -4,7 +4,7 @@ import Notiflix from 'notiflix';
 import Lodash from 'lodash.debounce';
 const DEBOUNCE_DELAY = 1000;
 const inputField = document.querySelector('#search-box');
-const itemsUl = document.querySelector('.country-list');
+export const itemsUl = document.querySelector('.country-list');
 inputField.addEventListener('input', Lodash(country, DEBOUNCE_DELAY));
 
 function country(e) {
